@@ -1,0 +1,47 @@
+name: Flux Transparent PNG Generator
+description: Deploy the Flux Transparent PNG Generator website
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          
+      - name: Create assets directory
+        run: mkdir -p docs/assets
+      
+      - name: Create placeholder images
+        run: |
+          echo "Creating placeholder images for the website"
+          # Create a simple placeholder logo
+          convert -size 200x50 canvas:transparent -font Arial -pointsize 20 -fill black -gravity center -annotate 0 "Flux PNG" docs/assets/logo.png
+          # Create a placeholder favicon
+          convert -size 32x32 canvas:transparent -font Arial -pointsize 12 -fill black -gravity center -annotate 0 "F" docs/assets/favicon.png
+          # Create a placeholder hero image
+          convert -size 600x400 canvas:transparent -font Arial -pointsize 24 -fill black -gravity center -annotate 0 "Transparent PNG Example" docs/assets/hero-image.png
+          # Create placeholder example images
+          convert -size 300x300 canvas:transparent -font Arial -pointsize 18 -fill black -gravity center -annotate 0 "Example 1" docs/assets/example1.png
+          convert -size 300x300 canvas:transparent -font Arial -pointsize 18 -fill black -gravity center -annotate 0 "Example 2" docs/assets/example2.png
+          convert -size 300x300 canvas:transparent -font Arial -pointsize 18 -fill black -gravity center -annotate 0 "Example 3" docs/assets/example3.png
+          # Create placeholder ComfyUI workflow image
+          convert -size 800x400 canvas:transparent -font Arial -pointsize 20 -fill black -gravity center -annotate 0 "ComfyUI Workflow Example" docs/assets/comfyui-workflow.png
+          # Create placeholder icons
+          mkdir -p docs/assets/icons
+          convert -size 64x64 canvas:transparent -font Arial -pointsize 14 -fill black -gravity center -annotate 0 "Training" docs/assets/icon-training.svg
+          convert -size 64x64 canvas:transparent -font Arial -pointsize 14 -fill black -gravity center -annotate 0 "Transparency" docs/assets/icon-transparency.svg
+          convert -size 64x64 canvas:transparent -font Arial -pointsize 14 -fill black -gravity center -annotate 0 "Integration" docs/assets/icon-integration.svg
+          convert -size 64x64 canvas:transparent -font Arial -pointsize 14 -fill black -gravity center -annotate 0 "Colab" docs/assets/icon-colab.svg
+      
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: docs

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flux.1 Transparent PNG Generator - Tiếng Việt</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/logo.png" alt="Logo" height="40" class="d-inline-block align-text-top me-2">
+                Flux.1 Transparent PNG Generator
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#overview">Tổng quan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Tính năng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#colab">Google Colab</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#usage">Hướng dẫn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#examples">Ví dụ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/your-username/flux-transparent-png" target="_blank">GitHub</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Ngôn ngữ
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="index.html">English</a></li>
+                            <li><a class="dropdown-item" href="index_vi.html">Tiếng Việt</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1>Tạo hình ảnh PNG trong suốt với AI</h1>
+                    <p class="lead">Huấn luyện và tạo ra hình ảnh PNG trong suốt không có nền sử dụng mô hình Flux.1 dev</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#colab" class="btn btn-primary btn-lg">Thử với Colab</a>
+                        <a href="https://github.com/your-username/flux-transparent-png" class="btn btn-outline-light btn-lg" target="_blank">Xem trên GitHub</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="assets/hero-image.png" alt="Ví dụ PNG trong suốt" class="img-fluid hero-image">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="overview" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tổng quan</h2>
+                <p>Giải pháp toàn diện cho việc tạo ra hình ảnh PNG trong suốt</p>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Dự án này triển khai một giải pháp toàn diện để huấn luyện và tạo ra hình ảnh PNG trong suốt không có nền sử dụng mô hình Flux.1 dev. Việc triển khai dựa trên kiến trúc của dự án Microsoft ART-MSRA nhưng được điều chỉnh đặc biệt cho việc tạo ra hình ảnh PNG trong suốt một lớp.</p>
+                    
+                    <p>Giải pháp bao gồm các thành phần sau:</p>
+                    <ul>
+                        <li><strong>Module huấn luyện</strong>: Huấn luyện VAE đã được điều chỉnh trên hình ảnh PNG trong suốt</li>
+                        <li><strong>Module lưu trữ</strong>: Lưu các mô hình VAE và decoder đã huấn luyện</li>
+                        <li><strong>Module tạo hình ảnh</strong>: Tạo ra hình ảnh PNG trong suốt mới</li>
+                        <li><strong>Tích hợp ComfyUI</strong>: Các node tùy chỉnh để sử dụng các mô hình đã huấn luyện trong ComfyUI</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tính năng</h2>
+                <p>Điều gì làm cho giải pháp này đặc biệt</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="assets/icon-training.svg" alt="Huấn luyện">
+                        </div>
+                        <h3>Huấn luyện tùy chỉnh</h3>
+                        <p>Huấn luyện trên hình ảnh PNG trong suốt của riêng bạn để tạo ra các mô hình phù hợp với nhu cầu của bạn</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="assets/icon-transparency.svg" alt="Trong suốt">
+                        </div>
+                        <h3>Trong suốt thực sự</h3>
+                        <p>Tạo ra hình ảnh với kênh alpha phù hợp để có độ trong suốt hoàn hảo</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="assets/icon-integration.svg" alt="Tích hợp">
+                        </div>
+                        <h3>Tích hợp ComfyUI</h3>
+                        <p>Các node tùy chỉnh để tích hợp liền mạch với quy trình làm việc ComfyUI</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <img src="assets/icon-colab.svg" alt="Colab">
+                        </div>
+                        <h3>Sẵn sàng cho Colab</h3>
+                        <p>Chạy mọi thứ trong Google Colab mà không cần thiết lập cục bộ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="colab" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tích hợp Google Colab</h2>
+                <p>Chạy trực tiếp trong trình duyệt của bạn mà không cần thiết lập</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="colab-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Pipeline huấn luyện</h3>
+                                <p class="card-text">Huấn luyện mô hình VAE trên hình ảnh PNG trong suốt từ Google Drive của bạn.</p>
+                                <ul class="mb-4">
+                                    <li>Tự động kết nối với Google Drive của bạn</li>
+                                    <li>Hiển thị tiến trình huấn luyện</li>
+                                    <li>Lưu các mô hình đã huấn luyện để sử dụng sau này</li>
+                                </ul>
+                                <a href="https://colab.research.google.com/github/your-username/flux-transparent-png/blob/main/colab/train_transparent_png.ipynb" target="_blank" class="colab-badge">
+                                    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Mở trong Colab">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="colab-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Tạo hình ảnh</h3>
+                                <p class="card-text">Tạo hình ảnh PNG trong suốt sử dụng các mô hình đã huấn luyện của bạn.</p>
+                                <ul class="mb-4">
+                                    <li>Tạo hình ảnh từ văn bản với độ trong suốt</li>
+                                    <li>Tạo hàng loạt với nhiều prompt</li>
+                                    <li>Công cụ thử nghiệm tham số</li>
+                                </ul>
+                                <a href="https://colab.research.google.com/github/your-username/flux-transparent-png/blob/main/colab/generate_transparent_png.ipynb" target="_blank" class="colab-badge">
+                                    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Mở trong Colab">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="usage" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Hướng dẫn sử dụng</h2>
+                <p>Cách sử dụng trình tạo PNG trong suốt</p>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="usage-tabs">
+                        <ul class="nav nav-tabs" id="usageTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="colab-tab" data-bs-toggle="tab" data-bs-target="#colab-content" type="button" role="tab" aria-controls="colab-content" aria-selected="true">Google Colab</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="local-tab" data-bs-toggle="tab" data-bs-target="#local-content" type="button" role="tab" aria-controls="local-content" aria-selected="false">Cài đặt cục bộ</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="comfyui-tab" data-bs-toggle="tab" data-bs-target="#comfyui-content" type="button" role="tab" aria-controls="comfyui-content" aria-selected="false">Tích hợp ComfyUI</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content p-4 bg-white rounded-bottom shadow-sm" id="usageTabsContent">
+                            <div class="tab-pane fade show active" id="colab-content" role="tabpanel" aria-labelledby="colab-tab">
+                                <h4>Sử dụng với Google Colab</h4>
+                                <ol>
+                                    <li>
+                                        <strong>Mở Notebook huấn luyện</strong>
+                                        <p>Nhấp vào nút "Mở trong Colab" cho notebook Pipeline huấn luyện.</p>
+                                    </li>
+                                    <li>
+                                        <strong>Kết nối với Google Drive</strong>
+                                        <p>Chạy ô đầu tiên để kết nối với Google Drive của bạn.</p>
+                                    </li>
+                                    <li>
+                                        <strong>Cấu hình đường dẫn</strong>
+                                        <p>Đặt đường dẫn cho dữ liệu huấn luyện, đầu ra mô hình và hình ảnh được tạo ra.</p>
+                                        <pre><code>DATA_DIR = "/content/drive/MyDrive/SD-Data/TrainData/4000_PNG/TEST"
+OUTPUT_DIR = "/content/drive/MyDrive/VAE-DECODER"</code></pre>
+                                    </li>
+                                    <li>
+                                        <strong>Huấn luyện mô hình</strong>
+                                        <p>Chạy các ô huấn luyện để huấn luyện mô hình VAE của bạn.</p>
+                                    </li>
+                                    <li>
+                                        <strong>Tạo hình ảnh</strong>
+                                        <p>Mở notebook Tạo hình ảnh và sử dụng mô hình đã huấn luyện của bạn để tạo PNG trong suốt.</p>
+                                    </li>
+                                </ol>
+                            </div>
+                            <div class="tab-pane fade" id="local-content" role="tabpanel" aria-labelledby="local-tab">
+                                <h4>Cài đặt cục bộ</h4>
+                                <ol>
+                                    <li>
+                                        <strong>Clone repository</strong>
+                                        <pre><code>git clone https://github.com/your-username/flux-transparent-png.git
+cd flux-transparent-png</code></pre>
+                                    </li>
+                                    <li>
+                                        <strong>Cài đặt dependencies</strong>
+                                        <pre><code>cd python
+python install.py</code></pre>
+                                    </li>
+                                    <li>
+                                        <strong>Huấn luyện mô hình</strong>
+                                        <pre><code>python main.py train \
+  --data_dir "/path/to/transparent/pngs" \
+  --output_dir "/path/to/save/models" \
+  --batch_size 8 \
+  --num_epochs 100</code></pre>
+                                    </li>
+                                    <li>
+                                        <strong>Lưu các mô hình</strong>
+                                        <pre><code>python main.py save \
+  --checkpoint_path "/path/to/checkpoint.pt" \
+  --output_dir "/path/to/save/models"</code></pre>
+                                    </li>
+                                    <li>
+                                        <strong>Tạo hình ảnh</strong>
+                                        <pre><code>python main.py generate \
+  --model_path "/path/to/model.pt" \
+  --prompt "Một bông hoa đẹp trên nền trong suốt" \
+  --output_dir "/path/to/save/images"</code></pre>
+                                    </li>
+                                </ol>
+                            </div>
+                            <div class="tab-pane fade" id="comfyui-content" role="tabpanel" aria-labelledby="comfyui-tab">
+                                <h4>Tích hợp ComfyUI</h4>
+                                <ol>
+                                    <li>
+                                        <strong>Cài đặt ComfyUI</strong>
+                                        <p>Tải xuống và cài đặt <a href="https://github.com/comfyanonymous/ComfyUI" target="_blank">ComfyUI</a> theo hướng dẫn trên trang GitHub của họ.</p>
+                                    </li>
+                                    <li>
+                                        <strong>Cài đặt các node tùy chỉnh</strong>
+                                        <p>Sao chép file <code>comfyui_transparent_png_nodes.py</code> vào thư mục <code>custom_nodes</code> trong cài đặt ComfyUI của bạn.</p>
+                                    </li>
+                                    <li>
+                                        <strong>Cài đặt các mô hình</strong>
+                                        <p>Sao chép các mô hình VAE và decoder đã huấn luyện của bạn vào thư mục <code>models/transparent_vae</code> trong cài đặt ComfyUI của bạn.</p>
+                                    </li>
+                                    <li>
+                                        <strong>Sử dụng các node</strong>
+                                        <p>Khởi động ComfyUI và sử dụng các node tùy chỉnh sau:</p>
+                                        <ul>
+                                            <li><strong>Load Transparent VAE</strong>: Tải mô hình VAE trong suốt đã huấn luyện</li>
+                                            <li><strong>Generate Transparent PNG</strong>: Tạo hình ảnh trong suốt từ prompt</li>
+                                            <li><strong>Save Transparent PNG</strong>: Lưu hình ảnh dưới dạng PNG trong suốt</li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                                <div class="mt-4">
+                                    <img src="assets/comfyui-workflow.png" alt="Ví dụ quy trình ComfyUI" class="img-fluid rounded">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="examples" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Thư viện ví dụ</h2>
+                <p>Hình ảnh PNG trong suốt được tạo ra bằng giải pháp của chúng tôi</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="example-card">
+                        <div class="example-image">
+                            <img src="assets/example1.png" alt="Ví dụ 1" class="img-fluid">
+                        </div>
+                        <div class="example-prompt">
+                            <p>"Một bông hồng đỏ đẹp trên nền trong suốt"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="example-card">
+                        <div class="example-image">
+                            <img src="assets/example2.png" alt="Ví dụ 2" class="img-fluid">
+                        </div>
+                        <div class="example-prompt">
+                            <p>"Một con mèo hoạt hình dễ thương với đôi mắt to trên nền trong suốt"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="example-card">
+                        <div class="example-image">
+                            <img src="assets/example3.png" alt="Ví dụ 3" class="img-fluid">
+                        </div>
+                        <div class="example-prompt">
+                            <p>"Một chiếc cúp vàng với ngôi sao ở trên đỉnh trên nền trong suốt"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="gallery.html" class="btn btn-outline-primary">Xem thư viện đầy đủ</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-8">
+                    <div class="cta-content text-center">
+                        <h2>Sẵn sàng tạo hình ảnh PNG trong suốt của riêng bạn?</h2>
+                        <p>Bắt đầu với các notebook Google Colab của chúng tôi hoặc tải mã nguồn từ GitHub.</p>
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <a href="https://colab.research.google.com/github/your-username/flux-transparent-png/blob/main/colab/generate_transparent_png.ipynb" class="btn btn-primary btn-lg" target="_blank">Thử với Colab</a>
+                            <a href="https://github.com/your-username/flux-transparent-png" class="btn btn-outline-light btn-lg" target="_blank">Xem trên GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Flux.1 Transparent PNG Generator</h4>
+                    <p>Một giải pháp toàn diện để huấn luyện và tạo ra hình ảnh PNG trong suốt không có nền sử dụng mô hình Flux.1 dev.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Liên kết nhanh</h4>
+                    <ul class="footer-links">
+                        <li><a href="#overview">Tổng quan</a></li>
+                        <li><a href="#features">Tính năng</a></li>
+                        <li><a href="#colab">Google Colab</a></li>
+                        <li><a href="#usage">Hướng dẫn</a></li>
+                        <li><a href="#examples">Ví dụ</a></li>
+                        <li><a href="https://github.com/your-username/flux-transparent-png" target="_blank">GitHub</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Tài nguyên</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/microsoft/art-msra" target="_blank">Microsoft ART-MSRA</a></li>
+                        <li><a href="https://huggingface.co/black-forest-labs/FLUX.1-dev" target="_blank">Flux.1 dev</a></li>
+                        <li><a href="https://github.com/comfyanonymous/ComfyUI" target="_blank">ComfyUI</a></li>
+                        <li><a href="https://colab.research.google.com/" target="_blank">Google Colab</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Flux.1 Transparent PNG Generator. Dựa trên <a href="https://github.com/microsoft/art-msra" target="_blank">Microsoft ART-MSRA</a> và <a href="https://huggingface.co/black-forest-labs/FLUX.1-dev" target="_blank">Flux.1 dev</a>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

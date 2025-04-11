@@ -1,0 +1,30 @@
+{
+  "name": "flux-transparent-png",
+  "version": "1.0.0",
+  "description": "Train and generate transparent PNG images using Flux.1 dev",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/flux-transparent-png.git"
+  },
+  "keywords": [
+    "flux",
+    "transparent",
+    "png",
+    "ai",
+    "machine-learning"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/your-username/flux-transparent-png/issues"
+  },
+  "homepage": "https://github.com/your-username/flux-transparent-png#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  }
+}
